@@ -1,0 +1,74 @@
+[
+  {
+    "id": "BUG-01",
+    "time_utc": "2026-10-20T13:27:54+00:00",
+    "action": "Нэмэх товчийг бүх талбарыг хоосон орхин дарав",
+    "observed": "Эхэнд 3 ном → 4 ном; мессеж: 'Ном нэмэгдлээ'",
+    "expected": "Шинэ ном нэмэгдэхгүй, ойлгомжтой алдаа харагдана",
+    "screenshot": "screenshots/bug-01.png",
+    "details": null
+  },
+  {
+    "id": "BUG-02",
+    "time_utc": "2026-10-20T13:27:54+00:00",
+    "action": "Он=999, бусад талбар бүрэн бөглөж нэмэв",
+    "observed": "Он=999 бүхий ном хүснэгтэд нэмэгдсэн: True",
+    "expected": "1000–2100 хүрээнээс гадуур онтой ном нэмэгдэхгүй",
+    "screenshot": "screenshots/bug-02.png",
+    "details": null
+  },
+  {
+    "id": "BUG-03",
+    "time_utc": "2026-10-20T13:27:55+00:00",
+    "action": "Одоо байгаа Clean Code / Robert C. Martin нэртэй номыг өөр оноор дахин нэмэв",
+    "observed": "Clean Code гэсэн 2 мөр харагдсан",
+    "expected": "Гарчиг, зохиолч ижил бол давхар оруулахгүй",
+    "screenshot": "screenshots/bug-03.png",
+    "details": null
+  },
+  {
+    "id": "BUG-04",
+    "time_utc": "2026-10-20T13:27:56+00:00",
+    "action": "Хайлтад clean code (жижиг үсгээр) оруулж Хайх дарсан",
+    "observed": "0 мөр буцсан",
+    "expected": "Clean Code ном 1 мөрөөр олдоно",
+    "screenshot": "screenshots/bug-04.png",
+    "details": null
+  },
+  {
+    "id": "BUG-05",
+    "time_utc": "2026-10-20T13:27:57+00:00",
+    "action": "Эхний ном дээр Устгах дарсан",
+    "observed": "Номын мөр 3→2 болов, мессеж: 'Ном нэмэгдлээ'",
+    "expected": "Ном устгалаа гэсэн үйлдэлд тохирсон мессеж гарна",
+    "screenshot": "screenshots/bug-05.png",
+    "details": null
+  },
+  {
+    "id": "BUG-06",
+    "time_utc": "2026-10-20T13:27:57+00:00",
+    "action": "Аппыг шинээр нээж Нийт ном тоолуурыг хүснэгтийн мөрийн тоотой харьцуулав",
+    "observed": "Хүснэгт: 3 мөр; статистик: 'Нийт ном: 4 · Хамгийн шинэ он: 2008'",
+    "expected": "Нийт ном 3 гэж харуулна",
+    "screenshot": "screenshots/bug-06.png",
+    "details": null
+  },
+  {
+    "id": "BUG-07",
+    "time_utc": "2026-10-20T13:27:58+00:00",
+    "action": "Footer дахь Хуучин хувилбар холбоосын /old endpoint шалгав",
+    "observed": "HTTP 500; body: 'HTTP/1.1 500 Internal Server Error\\nContent-Type: text/plain; charset=utf-8\\nDate: Tue, 20 Oct 2026 13:27:58 GMT\\nConnection: keep-alive\\nKeep-Alive: timeout=5\\nTransfer-Encoding: chunked\\n\\nInternal Server Error'",
+    "expected": "Хуудас/линк ажиллана; HTTP 2xx",
+    "screenshot": "screenshots/bug-07.png; evidence/bug-07-curl.txt",
+    "details": null
+  },
+  {
+    "id": "BUG-08",
+    "time_utc": "2026-10-20T13:27:58+00:00",
+    "action": "POST /api/books руу malformed JSON илгээв",
+    "observed": "HTTP 200; хариу: 'HTTP/1.1 200 OK\\nContent-Type: application/json\\nDate: Tue, 20 Oct 2026 13:27:58 GMT\\nConnection: keep-alive\\nKeep-Alive: timeout=5\\nTransfer-Encoding: chunked\\n\\n{\"result\":\"OK\"}'",
+    "expected": "HTTP 400",
+    "screenshot": "evidence/bug-08-curl.txt",
+    "details": null
+  }
+]
